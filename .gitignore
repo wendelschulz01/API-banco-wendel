@@ -1,0 +1,16 @@
+# node
+node_modules/
+.env
+dist/
+coverage/
+
+# logs
+logs
+*.log
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# docker
+docker-volume/
