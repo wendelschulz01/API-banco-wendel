@@ -2,13 +2,14 @@ import app from './app.js';
 
 import dotenv from 'dotenv';
 import sequelize from './config/database.js';
-import User from './models/User.js';
+import User from './app/models/User.js';
 
 dotenv.config();
 
 sequelize.sync().then(() => {
   console.log('Banco sincronizado.');
 });
+
 
 app.get('/users', async (req, res) => {
   const users = await User.findAll();

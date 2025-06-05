@@ -2,11 +2,10 @@
   "name": "banco-wendel",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch src/server.js",
+    "dev": "nodemon -r sucrase/register src/server.js",
+    "migrate":"sucrase-node node_modules/.bin/sequelize-cli db:migrate",
     "lint": "eslint src --ext .js",
     "lint:fix": "eslint --fix src --ext .js"
   },
@@ -25,7 +24,9 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
     "globals": "^16.2.0",
+    "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
-    "sequelize-cli": "^6.6.3"
+    "sequelize-cli": "^6.6.3",
+    "sucrase": "^3.35.0"
   }
 }
